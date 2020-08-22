@@ -10,7 +10,8 @@ namespace Demo_Project
         {
             IWebDriver driver = new ChromeDriver();
             driver.Navigate().GoToUrl("https://www.google.com");
-            driver.FindElement(By.Name("q")).SendKeys("Testing");
+            driver.FindElement(By.Name("q")).SendKeys("Testing" + Keys.Enter);
+            driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
             driver.Quit();
         }
     }
